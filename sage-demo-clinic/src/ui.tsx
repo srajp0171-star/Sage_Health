@@ -35,12 +35,12 @@ export function Modal({ isOpen, onClose, title, children, size = 'md' }: {
 }
 
 /* ── Button ────────────────────────────────────────────────────────── */
-export function Button({ children, variant = 'primary', onClick, className = '', disabled = false, size = 'md', type = 'button' }: {
+export function Button({ children, variant = 'primary', onClick, className = '', disabled = false, size = 'md', type = 'button', style }: {
   children: React.ReactNode; variant?: 'primary' | 'secondary' | 'danger' | 'ghost'; onClick?: () => void;
-  className?: string; disabled?: boolean; size?: 'sm' | 'md' | 'lg'; type?: 'button' | 'submit'
+  className?: string; disabled?: boolean; size?: 'sm' | 'md' | 'lg'; type?: 'button' | 'submit'; style?: React.CSSProperties
 }) {
   return (
-    <button type={type} className={`btn btn--${variant} btn--${size} ${className}`} onClick={onClick} disabled={disabled}>
+    <button type={type} className={`btn btn--${variant} btn--${size} ${className}`} onClick={onClick} disabled={disabled} style={style}>
       {children}
     </button>
   )

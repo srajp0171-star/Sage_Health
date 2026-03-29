@@ -51,7 +51,7 @@ export default function AnalyticsModule() {
                 <CartesianGrid strokeDasharray="3 3" stroke="#2A3347" />
                 <XAxis dataKey="month" stroke="#4A5568" tick={{ fill: '#8896B0', fontSize: 11 }} />
                 <YAxis stroke="#4A5568" tick={{ fill: '#8896B0', fontSize: 11 }} />
-                <Tooltip contentStyle={{ background: '#1C2537', border: '1px solid #2A3347', borderRadius: 8, color: '#F0F4FF' }} formatter={(v: number) => formatINR(v)} />
+                <Tooltip contentStyle={{ background: '#1C2537', border: '1px solid #2A3347', borderRadius: 8, color: '#F0F4FF' }} formatter={(v: any) => formatINR(Number(v))} />
                 <ReferenceLine y={25000} stroke="#F0B429" strokeDasharray="4 4" label={{ value: 'Target', fill: '#F0B429', fontSize: 11 }} />
                 <Bar dataKey="value" fill="#6DBF8A" radius={[4, 4, 0, 0]} name="Revenue" />
               </BarChart>
