@@ -56,7 +56,10 @@ export const ProposalScreen = () => {
           <Button onClick={exportPdf} isLoading={isGenerating}>
             <Download className="w-4 h-4" /> Download PDF
           </Button>
-          <Button variant="primary" onClick={() => window.open(`http://localhost:5173/?mode=demo&clinic=${encodeURIComponent(intake.clinicName)}&modules=${pricing.selectedModules.map(m => m.id).join(',')}`, '_blank')} className="bg-sage hover:bg-sage text-dark-base ml-2">
+          <Button variant="primary" onClick={() => {
+            const demoBaseUrl = import.meta.env.VITE_DEMO_URL || (window.location.hostname === 'localhost' ? 'http://localhost:5173' : 'https://sage-clinic.vercel.app');
+            window.open(`${demoBaseUrl.replace(/\/$/, '')}/?mode=demo&clinic=${encodeURIComponent(intake.clinicName)}&modules=${pricing.selectedModules.map(m => m.id).join(',')}`, '_blank');
+          }} className="bg-sage hover:bg-sage text-dark-base ml-2">
             <Play className="w-4 h-4 mr-2 inline" /> Launch Live Demo
           </Button>
         </div>
