@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Base Resets ─────────────────────────────────────────── */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+  background-color: #0D1117;
+  color: #E6EDF3;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Scrollbar Styling ───────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #2D333B;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #444C56;
+}
+
+/* ── Focus Ring ──────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid #7CB987;
+  outline-offset: 2px;
+}
+
+/* ── Selection ───────────────────────────────────────────── */
+::selection {
+  background: rgba(124, 185, 135, 0.25);
+  color: white;
+}
+
+/* ── PDF Mode Overrides ──────────────────────────────────── */
+.pdf-mode {
+  background: #ffffff !important;
+  color: #1a1a1a !important;
+}
+.pdf-mode * {
+  color: #1a1a1a !important;
+  border-color: #e5e7eb !important;
+}
+.pdf-mode .pdf-hide {
+  display: none !important;
+}
+.pdf-mode .pdf-text-sage {
+  color: #5A9668 !important;
+}
+.pdf-mode .pdf-border-sage {
+  border-color: #5A9668 !important;
+}
+.pdf-mode .pdf-bg-white {
+  background: #ffffff !important;
+}
+.pdf-mode table {
+  border-collapse: collapse;
+}
+.pdf-mode table td,
+.pdf-mode table th {
+  border-bottom: 1px solid #e5e7eb !important;
+}
+
+/* ── Print Styles ────────────────────────────────────────── */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .no-print,
+  .pdf-hide,
+  nav,
+  footer {
+    display: none !important;
+  }
+  #proposal-content {
+    background: white !important;
+    color: black !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 20mm !important;
+    max-width: 100% !important;
+  }
+  #proposal-content * {
+    color: black !important;
+    border-color: #ccc !important;
+  }
+  #proposal-content .text-sage,
+  #proposal-content .pdf-text-sage {
+    color: #5A9668 !important;
+  }
+}
+
+/* ── Glass morphism ──────────────────────────────────────── */
+.glass {
+  background: rgba(22, 27, 34, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(45, 51, 59, 0.5);
+}
